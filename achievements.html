@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        function snow() {
+            //1, define a snowflake template
+            var flake = $("<div>").css({
+                "position": "absolute",
+                "color": "#fff"
+            }).html("🎳");
+ 
+            //Get the width of the page, use this number to calculate, the value of left when the snowflake starts
+            var documentWidth = $(document).width();
+ 
+            //Get the height of the page, which is equivalent to the position of the Y axis when the snowflakes fall
+            var documentHieght = $(document).height();
+ 
+            //Define the number of milliseconds to generate a snowflake
+            var millisec = 100;
+            //2, set the first timer, a periodic timer, and generate a snowflake every time (millisec);
+            setInterval(function() {
+                //Randomly generate the value of left at the beginning of the snowflake falling, which is equivalent to the position of the X axis at the beginning
+                var startLeft = Math.random() * documentWidth;
+ 
+                //Randomly generate the value of left at the end of snowflake falling, which is equivalent to the position of the X axis at the end
+                var endLeft = Math.random() * documentWidth;
+ 
+                // Randomly generate snowflake size
+                var flakeSize = 5 + 20 * Math.random();
+ 
+                //Randomly generate the falling duration of snowflakes
+                var durationTime = 4000 + 7000 * Math.random();
+ 
+                //Randomly generate the transparency at the beginning of falling snowflakes
+                var startOpacity = 0.7 + 0.3 * Math.random();
+ 
+                //Randomly generate the transparency at the end of falling snowflakes
+                var endOpacity = 0.2 + 0.2 * Math.random();
+ 
+                //3. Clone a snowflake template, define the initial style of the snowflake, and stitch it into the page
+                flake.clone().appendTo($("body")).css({
+                    "left": startLeft,
+                    "opacity": startOpacity,
+                    "font-size": flakeSize,
+                    "top": "-25px",
+                }).animate({ //Execute animation
+                    "left": endLeft,
+                    "opacity": endOpacity,
+                    "top": documentHieght
+                }, durationTime, function() {
+                    //4. When the snowflake falls, delete the snowflake.
+                    $(this).remove(); 
+                });
+            }, millisec);
+        };
+        snow();
+    </script></body>
+<title>Welcome to Syed Muhammad Hafizuddin Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body> <body background="images/bg2.jpg">
+<audio controls autoplay>
+ <source src="music/ncs.mp3" type="audio/mpeg">
+ </audio>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="images/dp.png" style="width:45%;" class="w3-round"><br><br>
+    <h1><marquee behavior="alternate"><h4><b>SYED WEBPAGE</b></h4></marquee></h1>
+    <p class="w3-text-gery"><font color="red">Syed Hafizuddin © 2023</font></p>
+  </div>
+  <div class="w3-bar-block">
+    <a href="index.html" accesskey="1" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>HOME</a>
+    <a href="summary.html" accesskey="2" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>SUMMARY</a>
+    <a href="objective.html" accesskey="3" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>OBJECTIVE</a>
+    <a href="education.html" accesskey="4" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>EDUCATION</a>
+    <a href="curricular.html" accesskey="5" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>CURRICULAR</a>
+    <a href="skills.html" accesskey="6" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>SKILLS</a>
+    <a href="experiences.html" accesskey="7" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>EXPERIENCES</a>
+    <a href="achievements.html" accesskey="8" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>ACHIEVEMENTS</a>
+    <a href="references.html" accesskey="9" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>REFERENCES</a>
+  
+  </div>
+  <div class="w3-panel w3-large">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Achievements -->
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b><font color="blue">My Achievements</font></b></h4>
+    <p align="justify">
+      <ul>
+<li>My best academic performance was coming close to completing my bachelor's degree with a strong GPA. I was forced to pursue a part-time job while obtaining my university degree since my family was unable to help me financially. I learned from this to prioritise my time and keep my attention on my objectives. I'm happy of my accomplishment and believe the lessons I've gained will benefit me in the future as I develop my profession. </li>
+<br>
+<li>I maintained a perfect GPA throughout high school. In my three years of college, I was able to volunteer for groups since I realised there was more I could do with my time. I stayed a member of my college's events club after realising that planning and organising events is my area of interest. By the time I was in my last year, I had a GPA of 3.7 out of 4.0 and was no longer only a volunteer but also the director of the events department.</li>
+<p align="center"><embed src="video/handball.mp4" width="600" height="400">
+<br>
+<li>My first extracurricular accomplishment was winning a medal in the handball competitions I participated in while pursuing my degree, the Karisma and C-Games. I came in second in the UITM Shah Alam Karisma Competition and third at the UITM Machang C-Games. I'm also one of the top players in that match. My second extracurricular success was winning a 200 ringgit cash prize in a pubg competition at Uitm Machang.</li>
+
+</ul>
+    </p>
+    <hr>
+ </div>
+
+<!-- Copyright -->
+<div class="w3-white w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Copyright by <sub>Syed hafizuddin © 2023</sub></a></p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
